@@ -77,7 +77,11 @@ $(document).ready(function () {
           notes[feature.properties.id] = marker;
 
           map.addLayer(noteLayer);
+          map.panTo(marker.getLatLng());
+
+          marker._popup.options.autoPan = false;
           marker.openPopup();
+          marker._popup.options.autoPan = true;
         }
       });
     }
